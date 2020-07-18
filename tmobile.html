@@ -13,7 +13,7 @@
 
 
     <!-- Bootstrap core CSS -->
-<link href="./results/assets/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
 
     <style>
@@ -37,7 +37,7 @@
   </head>
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="home.html">CalSPEED</a>
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="index.html">CalSPEED</a>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,45 +45,62 @@
 
     </nav>
 
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="sidebar-sticky pt-3">
-        <ul class="nav flex-column">
-          <div class="sidenav">
-				<a href="home.html">Home</a>
-				<a href="mobile.html">Mobile</a>
-				<a href="desktop.html">Desktop</a>
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="sidebar-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">
+                  <span data-feather="home"></span>
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">
+                  <span data-feather="layers"></span>
+                  About
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="desktop.html">
+                  <span data-feather="bar-chart-2"></span>
+                  Desktop
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="mobile.html">
+                  <span data-feather="layers"></span>
+                  Mobile<span class="sr-only">(current)</span>
+                </a>
+              </li>
+            </ul>
 
-			</div>
-          </li>
-        </ul>
+          </div>
+        </nav>
 
-          </li>
-        </ul>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">T-Mobile Results</h1>
+
+          </div>
+
+    	 <div class="dropdown">
+
+     		 <button class="dropbtn">Carriers</button>
+     			 <div class="dropdown-content">
+      		  		<a href="at.html">AT&T</a>
+      		 		<a href="sprint.html">Sprint</a>
+      				<a href="tmobile.html">T-Mobile</a>
+      		  		<a href="verizon.html">Verizon</a>
+    				<a href="all.html">All Carriers</a>
+     			 </div>
+    	</div>
+
+          <img class="graph" src="img/tmobile.png" alt="mobile data">
+
+        </main>
       </div>
-    </nav>
-
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">T-Mobile Results</h1>
-
-      </div>
-	  
-	 <div class="dropdown">
-	 
- 		 <button class="dropbtn">Carriers</button>
- 			 <div class="dropdown-content">
-  		  		<a href="at.html">AT&T</a>
-  		 		<a href="sprint.html">Sprint</a>
-  				<a href="tmobile.html">T-Mobile</a>
-  		  		<a href="verizon.html">Verizon</a>
-				<a href="all.html">All</a>
- 			 </div>
-	</div>
-
-      <img class="graph" src="img/tmobile.png" alt="mobile data">
-
-    </main>
-  </div>
-</div>
+    </div>
+  </body>
+</html>
