@@ -9,6 +9,7 @@
     <title>CalSPEED Desktop Data</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
 
 
@@ -86,7 +87,80 @@
 
       </div>
 
-      <img class="graph" src="./img/desktopGraph.png" alt="desktop data">
+        <div id="Desktop" style="width:80%; height:400px;"></div>
+
+        <script>
+          Highcharts.chart('Desktop', {
+
+            title: {
+              text: 'Internet Speeds by Year for Desktop'
+            },
+
+            yAxis: {
+              title: {
+                text: 'Upload / Download Speed (mbps)'
+              }
+            },
+
+            xAxis: {
+              accessibility: {
+                rangeDescription: 'Years'
+              }
+            },
+
+            legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+              series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2010
+              }
+            },
+
+            series: [{
+              name: 'Upload (West)',
+              data: [15.569, 9.214, 6.786, 7.723, 5.136, 10.477, 10.901]
+
+
+            }, {
+              name: 'Upload (East)',
+              data: [8.296, 5.072, 4.277, 5.027, 3.995, 6.092, 7.598]
+
+
+            }, {
+              name: 'Download (West)',
+              data: [24.666, 14.335, 15.746, 22.431, 21.005, 24.631, 38.657]
+
+
+
+            }, {
+              name: 'Download (East)',
+              data: [13.876, 8.326, 10.131, 10.924, 10.931, 10.860, 20.203]
+            }],
+
+            responsive: {
+              rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }]
+            }
+
+          });
+        </script>
 
     </main>
   </div>
