@@ -83,7 +83,7 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Desktop Results</h1>
+        <h1 class="h2">Results for Mac and PC</h1>
 
       </div>
     	 <div class="dropdown">
@@ -101,7 +101,7 @@
           Highcharts.chart('Desktop', {
 
             title: {
-              text: 'Internet Speeds by Year for Desktop'
+              text: 'Internet Speeds by Year by Operating System'
             },
 
             yAxis: {
@@ -132,24 +132,24 @@
             },
 
             series: [{
-              name: 'Upload (West)',
+              name: 'PC',
               data: [15.569, 9.214, 6.786, 7.723, 5.136, 10.477, 10.901]
 
 
             }, {
-              name: 'Upload (East)',
+              name: 'Mac',
               data: [8.296, 5.072, 4.277, 5.027, 3.995, 6.092, 7.598]
 
 
             }, {
-              name: 'Download (West)',
-              data: [24.666, 14.335, 15.746, 22.431, 21.005, 24.631, 38.657]
+              name: '',
+              data: []
 
 
 
             }, {
-              name: 'Download (East)',
-              data: [13.876, 8.326, 10.131, 10.924, 10.931, 10.860, 20.203]
+              name: '',
+              data: []
             }],
 
             responsive: {
