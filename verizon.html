@@ -11,6 +11,12 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
 
+    <script src="js/highcharts.js"></script>
+    <script src="js/series-label.js"></script>
+    <!-- <script src="js/exporting.js"></script> -->
+    <script src="js/export-data.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/high-contrast-light.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -97,7 +103,122 @@
        			 </div>
       	 </div>
 
-          <img class="graph" src="img/verizon.png" alt="mobile data">
+         <div id="verDown" style="width:80%; height:45 0px;"></div>
+         <br><br>
+         <div id="verUp" style="width:80%; height:450px;"></div>
+
+         <script>
+           //Download Graph
+           Highcharts.chart('verDown', {
+
+             title: {
+             text: 'Average Download Speed: Verizon'
+             },
+
+             yAxis: {
+             title: {
+             text: 'Download Speed (mbps)'
+             }
+             },
+
+             xAxis: {
+             accessibility: {
+             rangeDescription: 'Years'
+             }
+             },
+
+             legend: {
+             layout: 'vertical',
+             align: 'right',
+             verticalAlign: 'middle'
+             },
+
+             plotOptions: {
+             series: {
+             label: {
+               connectorAllowed: false
+             },
+             pointStart: 2010
+             }
+             },
+
+             series: [{
+             name: 'Verizon',
+             data: [7.297, 9.898, 10.884, 10.947, 13.745, 15.998, 16.774, 21.225]
+
+             }],
+
+             responsive: {
+             rules: [{
+             condition: {
+               maxWidth: 500
+             },
+             chartOptions: {
+               legend: {
+                 layout: 'horizontal',
+                 align: 'center',
+                 verticalAlign: 'bottom'
+               }}}]}
+             });
+
+             // Upload graph
+
+             Highcharts.chart('verUp', {
+
+              title: {
+              text: 'Average Upload Speed: Verizon'
+              },
+
+              yAxis: {
+              title: {
+                text: 'Upload Speed (mbps)'
+              }
+              },
+
+              xAxis: {
+              accessibility: {
+                rangeDescription: 'Years'
+              }
+              },
+
+              legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+              },
+
+              plotOptions: {
+              series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2010
+              }
+              },
+
+              series: [{
+              name: 'Verizon',
+              data: [3.480, 3.961, 4.284, 4.262, 4.994, 5.940, 6.907, 6.057]
+              }],
+
+              responsive: {
+              rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }]
+              }
+
+            });
+
+         </script>
 
         </main>
       </div>

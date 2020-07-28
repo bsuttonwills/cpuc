@@ -11,6 +11,12 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
 
+    <script src="js/highcharts.js"></script>
+    <script src="js/series-label.js"></script>
+    <!-- <script src="js/exporting.js"></script> -->
+    <script src="js/export-data.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/high-contrast-light.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -97,7 +103,123 @@
      			 </div>
     	</div>
 
-          <img class="graph" src="img/tmobile.png" alt="mobile data">
+      <div id="tmobDown" style="width:80%; height:45 0px;"></div>
+      <br><br>
+      <div id="tmobUp" style="width:80%; height:450px;"></div>
+
+
+      <script>
+        //Download Graph
+        Highcharts.chart('tmobDown', {
+
+          title: {
+          text: 'Average Download Speed: T-Mobile'
+          },
+
+          yAxis: {
+          title: {
+          text: 'Download Speed (mbps)'
+          }
+          },
+
+          xAxis: {
+          accessibility: {
+          rangeDescription: 'Years'
+          }
+          },
+
+          legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'middle'
+          },
+
+          plotOptions: {
+          series: {
+          label: {
+            connectorAllowed: false
+          },
+          pointStart: 2010
+          }
+          },
+
+          series: [{
+          name: 'T-Mobile',
+          data: [4.995, 9.356, 15.269, 26.299, 14.259, 9.820, 10.873, 20.045]
+
+          }],
+
+          responsive: {
+          rules: [{
+          condition: {
+            maxWidth: 500
+          },
+          chartOptions: {
+            legend: {
+              layout: 'horizontal',
+              align: 'center',
+              verticalAlign: 'bottom'
+            }}}]}
+          });
+
+          // Upload graph
+
+          Highcharts.chart('tmobUp', {
+
+           title: {
+           text: 'Average Upload Speed: T-Mobile'
+           },
+
+           yAxis: {
+           title: {
+             text: 'Upload Speed (mbps)'
+           }
+           },
+
+           xAxis: {
+           accessibility: {
+             rangeDescription: 'Years'
+           }
+           },
+
+           legend: {
+           layout: 'vertical',
+           align: 'right',
+           verticalAlign: 'middle'
+           },
+
+           plotOptions: {
+           series: {
+             label: {
+               connectorAllowed: false
+             },
+             pointStart: 2010
+           }
+           },
+
+           series: [{
+           name: 'T-Mobile',
+           data: [1.844, 4.243, 6.022, 18.581, 5.764, 2.851, 5.171, 8.685]
+           }],
+
+           responsive: {
+           rules: [{
+             condition: {
+               maxWidth: 500
+             },
+             chartOptions: {
+               legend: {
+                 layout: 'horizontal',
+                 align: 'center',
+                 verticalAlign: 'bottom'
+               }
+             }
+           }]
+           }
+
+         });
+
+      </script>
 
         </main>
       </div>
