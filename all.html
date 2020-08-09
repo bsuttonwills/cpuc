@@ -109,15 +109,19 @@
 
           <div id="wDown" style="width:80%; height:45 0px;"></div>
           <br><br>
+          <div id="eDown" style="width:80%; height:45 0px;"></div>
+          <br><br>
           <div id="wUp" style="width:80%; height:450px;"></div>
+          <br><br>
+          <div id="eUp" style="width:80%; height:45 0px;"></div>
 
 
           <script>
-            //Download Graph
+            // West Download Graph
             Highcharts.chart('wDown', {
 
               title: {
-              text: 'Average Download Speed by Carrier'
+              text: 'Average Download Speed by Carrier (West)'
               },
 
               yAxis: {
@@ -178,12 +182,78 @@
                 }}}]}
               });
 
-              // Upload graph
+              // East Download Graph
+              Highcharts.chart('eDown', {
+
+                title: {
+                text: 'Average Download Speed by Carrier (East)'
+                },
+
+                yAxis: {
+                title: {
+                text: 'Download Speed (mbps)'
+                }
+                },
+
+                xAxis: {
+                accessibility: {
+                rangeDescription: 'Years'
+                }
+                },
+
+                legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+                },
+
+                plotOptions: {
+                series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2013
+                }
+                },
+
+                series: [{
+                name: 'AT&T',
+                data: [7, 8, 9, 10, 8, 8, 9, 12]
+                }, {
+                name: 'Sprint',
+                data: [3, 3, 5, 8, 7, 7, 11, 8]
+                }, {
+                name: 'T-Mobile',
+                data: [4, 7, 12, 11, 9, 5, 7, 13]
+
+                }, {
+                name: 'Verizon',
+                data: [5, 7, 8, 8, 8, 9, 9, 12]
+                }, {
+                  name: 'Other',
+                  data: [3, 3, 3, 7, 6, 6, 8, 11]
+                }],
+
+                responsive: {
+                rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }}}]}
+                });
+
+
+              // West Upload graph
 
               Highcharts.chart('wUp', {
 
                title: {
-               text: 'Average Upload Speed by Carrier'
+               text: 'Average Upload Speed by Carrier (West)'
                },
 
                yAxis: {
@@ -250,6 +320,79 @@
                }
 
              });
+
+             // East Upload graph
+
+             Highcharts.chart('eUp', {
+
+              title: {
+              text: 'Average Upload Speed by Carrier (East)'
+              },
+
+              yAxis: {
+              title: {
+                text: 'Upload Speed (mbps)'
+              }
+              },
+
+              xAxis: {
+              accessibility: {
+                rangeDescription: 'Years'
+              }
+              },
+
+              legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+              },
+
+              plotOptions: {
+              series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2013
+              }
+              },
+
+              series: [{
+              name: 'AT&T',
+              data: [7, 8, 9, 10, 8, 8, 9, 12]
+
+              }, {
+              name: 'Sprint',
+              data: [3, 3, 5, 8, 7, 7, 11, 8]
+
+              }, {
+              name: 'T-Mobile',
+              data: [4, 7, 12, 11, 9, 5, 7, 13]
+
+
+              }, {
+              name: 'Verizon',
+              data: [5, 7, 8, 8, 8, 9, 9, 12]
+              }, {
+              name: 'Other',
+              data: [3, 3, 3, 7, 6, 6, 8, 11]
+              }],
+
+              responsive: {
+              rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }]
+              }
+
+            });
 
 
           </script>
