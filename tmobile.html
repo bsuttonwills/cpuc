@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <title>CalSPEED Mobile Data</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -16,7 +17,10 @@
     <!-- <script src="js/exporting.js"></script> -->
     <script src="js/export-data.js"></script>
     <script src="js/accessibility.js"></script>
-    <script src="js/high-contrast-light.js"></script>
+    <!-- <script src="js/high-contrast-light.js"></script> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -39,7 +43,7 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <!--link href="dashboard.css" rel="stylesheet"-->
+    <link href="css/dashboard.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -91,138 +95,260 @@
 
           </div>
 
-    	 <div class="dropdown">
-
-     		 <button class="dropbtn">Carriers</button>
-     			 <div class="dropdown-content">
-      		  		<a href="at.html">AT&T</a>
-      		 		<a href="sprint.html">Sprint</a>
-      				<a href="tmobile.html">T-Mobile</a>
-      		  		<a href="verizon.html">Verizon</a>
-    				<a href="all.html">All Carriers</a>
-     			 </div>
-    	</div>
-
-      <div id="tmobDown" style="width:80%; height:45 0px;"></div>
-      <br><br>
-      <div id="tmobUp" style="width:80%; height:450px;"></div>
+          <div class="dropdown">
+            <button class="dropbtn">Carriers</button>
+              <div class="dropdown-content">
+                   <a href="at.html">AT&T</a>
+                 <a href="sprint.html">Sprint</a>
+                 <a href="tmobile.html">T-Mobile</a>
+                   <a href="verizon.html">Verizon</a>
+               <a href="all.html">All Carriers</a>
+              </div>
+         </div>
 
 
-      <script>
-        //Download Graph
-        Highcharts.chart('tmobDown', {
+          <div id="wDown" style="width:80%; height:45 0px;"></div>
+          <br><br>
+          <div id="eDown" style="width:80%; height:45 0px;"></div>
+          <br><br>
+          <div id="wUp" style="width:80%; height:450px;"></div>
+          <br><br>
+          <div id="eUp" style="width:80%; height:45 0px;"></div>
 
-          title: {
-          text: 'Average Download Speed: T-Mobile'
-          },
 
-          yAxis: {
-          title: {
-          text: 'Download Speed (mbps)'
-          }
-          },
+          <script>
+            // West Download Graph
+            Highcharts.chart('wDown', {
 
-          xAxis: {
-          accessibility: {
-          rangeDescription: 'Years'
-          }
-          },
+              title: {
+              text: 'Average Download Speed: T-Moblie (West)'
+              },
 
-          legend: {
-          layout: 'vertical',
-          align: 'right',
-          verticalAlign: 'middle'
-          },
+              yAxis: {
+              title: {
+              text: 'Download Speed (mbps)'
+              }
+              },
 
-          plotOptions: {
-          series: {
-          label: {
-            connectorAllowed: false
-          },
-          pointStart: 2013
-          }
-          },
+              xAxis: {
+              accessibility: {
+              rangeDescription: 'Years'
+              }
+              },
 
-          series: [{
-          name: 'T-Mobile',
-          data: [4.995, 9.356, 15.269, 26.299, 14.259, 9.820, 10.873, 20.045]
+              legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+              },
 
-          }],
+              plotOptions: {
+              series: {
+              label: {
+                connectorAllowed: false
+              },
+              pointStart: 2013
+              }
+              },
 
-          responsive: {
-          rules: [{
-          condition: {
-            maxWidth: 500
-          },
-          chartOptions: {
-            legend: {
-              layout: 'horizontal',
-              align: 'center',
-              verticalAlign: 'bottom'
-            }}}]}
-          });
+              series: [{
+              name: 'T-Mobile',
+              data: [5, 9, 15, 26, 14, 10, 11, 20]
 
-          // Upload graph
+              }],
 
-          Highcharts.chart('tmobUp', {
+              responsive: {
+              rules: [{
+              condition: {
+                maxWidth: 500
+              },
+              chartOptions: {
+                legend: {
+                  layout: 'horizontal',
+                  align: 'center',
+                  verticalAlign: 'bottom'
+                }}}]}
+              });
 
-           title: {
-           text: 'Average Upload Speed: T-Mobile'
-           },
+              // East Download Graph
+              Highcharts.chart('eDown', {
 
-           yAxis: {
-           title: {
-             text: 'Upload Speed (mbps)'
-           }
-           },
+                title: {
+                text: 'Average Download Speed: T-Mobile (East)'
+                },
 
-           xAxis: {
-           accessibility: {
-             rangeDescription: 'Years'
-           }
-           },
+                yAxis: {
+                title: {
+                text: 'Download Speed (mbps)'
+                }
+                },
 
-           legend: {
-           layout: 'vertical',
-           align: 'right',
-           verticalAlign: 'middle'
-           },
+                xAxis: {
+                accessibility: {
+                rangeDescription: 'Years'
+                }
+                },
 
-           plotOptions: {
-           series: {
-             label: {
-               connectorAllowed: false
-             },
-             pointStart: 2013
-           }
-           },
+                legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+                },
 
-           series: [{
-           name: 'T-Mobile',
-           data: [1.844, 4.243, 6.022, 18.581, 5.764, 2.851, 5.171, 8.685]
-           }],
+                plotOptions: {
+                series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2013
+                }
+                },
 
-           responsive: {
-           rules: [{
-             condition: {
-               maxWidth: 500
-             },
-             chartOptions: {
-               legend: {
-                 layout: 'horizontal',
-                 align: 'center',
-                 verticalAlign: 'bottom'
+                series: [{
+                name: 'T-Mobile',
+                data: [4, 7, 12, 11, 9, 5, 7, 13]
+
+                }],
+
+                responsive: {
+                rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }}}]}
+                });
+
+
+              // West Upload graph
+
+              Highcharts.chart('wUp', {
+
+               title: {
+               text: 'Average Upload Speed: T-Moblie (West)'
+               },
+
+               yAxis: {
+               title: {
+                 text: 'Upload Speed (mbps)'
                }
-             }
-           }]
-           }
+               },
 
-         });
+               xAxis: {
+               accessibility: {
+                 rangeDescription: 'Years'
+               }
+               },
 
-      </script>
+               legend: {
+               layout: 'vertical',
+               align: 'right',
+               verticalAlign: 'middle'
+               },
+
+               plotOptions: {
+               series: {
+                 label: {
+                   connectorAllowed: false
+                 },
+                 pointStart: 2013
+               }
+               },
+
+               series: [{
+               name: 'T-Mobile',
+               data: [2, 4, 6, 19, 6, 3, 5, 9]
+
+
+               }],
+
+               responsive: {
+               rules: [{
+                 condition: {
+                   maxWidth: 500
+                 },
+                 chartOptions: {
+                   legend: {
+                     layout: 'horizontal',
+                     align: 'center',
+                     verticalAlign: 'bottom'
+                   }
+                 }
+               }]
+               }
+
+             });
+
+             // East Upload graph
+
+             Highcharts.chart('eUp', {
+
+              title: {
+              text: 'Average Upload Speed: T-Mobile (East)'
+              },
+
+              yAxis: {
+              title: {
+                text: 'Upload Speed (mbps)'
+              }
+              },
+
+              xAxis: {
+              accessibility: {
+                rangeDescription: 'Years'
+              }
+              },
+
+              legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+              },
+
+              plotOptions: {
+              series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2013
+              }
+              },
+
+              series: [{
+              name: 'T-Mobile',
+              data: [4, 7, 12, 11, 9, 5, 7, 13]
+
+
+              }],
+
+              responsive: {
+              rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }]
+              }
+
+            });
+
+
+          </script>
+
 
         </main>
       </div>
+
     </div>
   </body>
 </html>

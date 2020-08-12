@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <title>CalSPEED Mobile Data</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -16,7 +17,10 @@
     <!-- <script src="js/exporting.js"></script> -->
     <script src="js/export-data.js"></script>
     <script src="js/accessibility.js"></script>
-    <script src="js/high-contrast-light.js"></script>
+    <!-- <script src="js/high-contrast-light.js"></script> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -39,11 +43,11 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <!--link href="dashboard.css" rel="stylesheet"-->
+    <link href="css/dashboard.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="home.html">CalSPEED</a>
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="index.html">CalSPEED</a>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -91,138 +95,256 @@
 
           </div>
 
-    	 <div class="dropdown">
+          <div class="dropdown">
+            <button class="dropbtn">Carriers</button>
+              <div class="dropdown-content">
+                   <a href="at.html">AT&T</a>
+                 <a href="sprint.html">Sprint</a>
+                 <a href="tmobile.html">T-Mobile</a>
+                   <a href="verizon.html">Verizon</a>
+               <a href="all.html">All Carriers</a>
+              </div>
+         </div>
 
-     		 <button class="dropbtn">Carriers</button>
-     			 <div class="dropdown-content">
-      		  		<a href="at.html">AT&T</a>
-      		 		<a href="sprint.html">Sprint</a>
-      				<a href="tmobile.html">T-Mobile</a>
-      		  		<a href="verizon.html">Verizon</a>
-    				<a href="all.html">All Carriers</a>
-     			 </div>
-    	</div>
 
-      <div id="sprDown" style="width:80%; height:45 0px;"></div>
-      <br><br>
-      <div id="sprUp" style="width:80%; height:450px;"></div>
+          <div id="wDown" style="width:80%; height:45 0px;"></div>
+          <br><br>
+          <div id="eDown" style="width:80%; height:45 0px;"></div>
+          <br><br>
+          <div id="wUp" style="width:80%; height:450px;"></div>
+          <br><br>
+          <div id="eUp" style="width:80%; height:45 0px;"></div>
 
-      <script>
-        //Download Graph
-        Highcharts.chart('sprDown', {
 
-          title: {
-          text: 'Average Download Speed: Sprint'
-          },
+          <script>
+            // West Download Graph
+            Highcharts.chart('wDown', {
 
-          yAxis: {
-          title: {
-          text: 'Download Speed (mbps)'
-          }
-          },
+              title: {
+              text: 'Average Download Speed: Sprint (West)'
+              },
 
-          xAxis: {
-          accessibility: {
-          rangeDescription: 'Years'
-          }
-          },
+              yAxis: {
+              title: {
+              text: 'Download Speed (mbps)'
+              }
+              },
 
-          legend: {
-          layout: 'vertical',
-          align: 'right',
-          verticalAlign: 'middle'
-          },
+              xAxis: {
+              accessibility: {
+              rangeDescription: 'Years'
+              }
+              },
 
-          plotOptions: {
-          series: {
-          label: {
-            connectorAllowed: false
-          },
-          pointStart: 2013
-          }
-          },
+              legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+              },
 
-          series: [{
-          name: 'Sprint',
-          data: [3.206, 3.192, 5.777, 8.905, 11.442, 10.844, 18.974, 15.390]
+              plotOptions: {
+              series: {
+              label: {
+                connectorAllowed: false
+              },
+              pointStart: 2013
+              }
+              },
 
-          }],
+              series: [{
+              name: 'Sprint',
+              data: [3, 3, 6, 9, 11, 11, 19, 15]
+              }],
 
-          responsive: {
-          rules: [{
-          condition: {
-            maxWidth: 500
-          },
-          chartOptions: {
-            legend: {
-              layout: 'horizontal',
-              align: 'center',
-              verticalAlign: 'bottom'
-            }}}]}
-          });
+              responsive: {
+              rules: [{
+              condition: {
+                maxWidth: 500
+              },
+              chartOptions: {
+                legend: {
+                  layout: 'horizontal',
+                  align: 'center',
+                  verticalAlign: 'bottom'
+                }}}]}
+              });
 
-          // Upload graph
+              // East Download Graph
+              Highcharts.chart('eDown', {
 
-          Highcharts.chart('sprUp', {
+                title: {
+                text: 'Average Download Speed: Sprint (East)'
+                },
 
-           title: {
-           text: 'Average Upload Speed: Sprint'
-           },
+                yAxis: {
+                title: {
+                text: 'Download Speed (mbps)'
+                }
+                },
 
-           yAxis: {
-           title: {
-             text: 'Upload Speed (mbps)'
-           }
-           },
+                xAxis: {
+                accessibility: {
+                rangeDescription: 'Years'
+                }
+                },
 
-           xAxis: {
-           accessibility: {
-             rangeDescription: 'Years'
-           }
-           },
+                legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+                },
 
-           legend: {
-           layout: 'vertical',
-           align: 'right',
-           verticalAlign: 'middle'
-           },
+                plotOptions: {
+                series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2013
+                }
+                },
 
-           plotOptions: {
-           series: {
-             label: {
-               connectorAllowed: false
-             },
-             pointStart: 2013
-           }
-           },
+                series: [{
+                name: 'Sprint',
+                data: [3, 3, 5, 8, 7, 7, 11, 8]
+                }],
 
-           series: [{
-           name: 'Sprint',
-           data: [1.688, 1.730, 2.377, 3.359, 3.751, 2.370, 7.417, 4.478]
-           }],
+                responsive: {
+                rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }}}]}
+                });
 
-           responsive: {
-           rules: [{
-             condition: {
-               maxWidth: 500
-             },
-             chartOptions: {
-               legend: {
-                 layout: 'horizontal',
-                 align: 'center',
-                 verticalAlign: 'bottom'
+
+              // West Upload graph
+
+              Highcharts.chart('wUp', {
+
+               title: {
+               text: 'Average Upload Speed: Sprint (West)'
+               },
+
+               yAxis: {
+               title: {
+                 text: 'Upload Speed (mbps)'
                }
-             }
-           }]
-           }
+               },
 
-         });
+               xAxis: {
+               accessibility: {
+                 rangeDescription: 'Years'
+               }
+               },
 
-      </script>
+               legend: {
+               layout: 'vertical',
+               align: 'right',
+               verticalAlign: 'middle'
+               },
+
+               plotOptions: {
+               series: {
+                 label: {
+                   connectorAllowed: false
+                 },
+                 pointStart: 2013
+               }
+               },
+
+               series: [{
+               name: 'Sprint',
+               data: [2, 2, 2, 3, 4, 2, 7, 4]
+
+               }],
+
+               responsive: {
+               rules: [{
+                 condition: {
+                   maxWidth: 500
+                 },
+                 chartOptions: {
+                   legend: {
+                     layout: 'horizontal',
+                     align: 'center',
+                     verticalAlign: 'bottom'
+                   }
+                 }
+               }]
+               }
+
+             });
+
+             // East Upload graph
+
+             Highcharts.chart('eUp', {
+
+              title: {
+              text: 'Average Upload Speed: Sprint (East)'
+              },
+
+              yAxis: {
+              title: {
+                text: 'Upload Speed (mbps)'
+              }
+              },
+
+              xAxis: {
+              accessibility: {
+                rangeDescription: 'Years'
+              }
+              },
+
+              legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+              },
+
+              plotOptions: {
+              series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2013
+              }
+              },
+
+              series: [{
+              name: 'Sprint',
+              data: [3, 3, 5, 8, 7, 7, 11, 8]
+
+              }],
+
+              responsive: {
+              rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }]
+              }
+
+            });
+
+
+          </script>
 
 
         </main>
       </div>
+
     </div>
   </body>
 </html>

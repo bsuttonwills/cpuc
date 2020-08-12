@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <title>CalSPEED Mobile Data</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -16,7 +17,10 @@
     <!-- <script src="js/exporting.js"></script> -->
     <script src="js/export-data.js"></script>
     <script src="js/accessibility.js"></script>
-    <script src="js/high-contrast-light.js"></script>
+    <!-- <script src="js/high-contrast-light.js"></script> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -39,7 +43,7 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <!--link href="dashboard.css" rel="stylesheet"-->
+    <link href="css/dashboard.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -91,82 +95,197 @@
 
           </div>
 
-      	 <div class="dropdown">
+          <div class="dropdown">
+            <button class="dropbtn">Carriers</button>
+              <div class="dropdown-content">
+                   <a href="at.html">AT&T</a>
+                 <a href="sprint.html">Sprint</a>
+                 <a href="tmobile.html">T-Mobile</a>
+                   <a href="verizon.html">Verizon</a>
+               <a href="all.html">All Carriers</a>
+              </div>
+         </div>
 
-       		 <button class="dropbtn">Carriers</button>
-       			 <div class="dropdown-content">
-        		  		<a href="at.html">AT&T</a>
-        		 		<a href="sprint.html">Sprint</a>
-        				<a href="tmobile.html">T-Mobile</a>
-        		  		<a href="verizon.html">Verizon</a>
-      				<a href="all.html">All Carriers</a>
-       			 </div>
-      	 </div>
 
-         <div id="verDown" style="width:80%; height:45 0px;"></div>
-         <br><br>
-         <div id="verUp" style="width:80%; height:450px;"></div>
+          <div id="wDown" style="width:80%; height:45 0px;"></div>
+          <br><br>
+          <div id="eDown" style="width:80%; height:45 0px;"></div>
+          <br><br>
+          <div id="wUp" style="width:80%; height:450px;"></div>
+          <br><br>
+          <div id="eUp" style="width:80%; height:45 0px;"></div>
 
-         <script>
-           //Download Graph
-           Highcharts.chart('verDown', {
 
-             title: {
-             text: 'Average Download Speed: Verizon'
-             },
-
-             yAxis: {
-             title: {
-             text: 'Download Speed (mbps)'
-             }
-             },
-
-             xAxis: {
-             accessibility: {
-             rangeDescription: 'Years'
-             }
-             },
-
-             legend: {
-             layout: 'vertical',
-             align: 'right',
-             verticalAlign: 'middle'
-             },
-
-             plotOptions: {
-             series: {
-             label: {
-               connectorAllowed: false
-             },
-             pointStart: 2013
-             }
-             },
-
-             series: [{
-             name: 'Verizon',
-             data: [7.297, 9.898, 10.884, 10.947, 13.745, 15.998, 16.774, 21.225]
-
-             }],
-
-             responsive: {
-             rules: [{
-             condition: {
-               maxWidth: 500
-             },
-             chartOptions: {
-               legend: {
-                 layout: 'horizontal',
-                 align: 'center',
-                 verticalAlign: 'bottom'
-               }}}]}
-             });
-
-             // Upload graph
-
-             Highcharts.chart('verUp', {
+          <script>
+            // West Download Graph
+            Highcharts.chart('wDown', {
 
               title: {
-              text: 'Average Upload Speed: Verizon'
+              text: 'Average Download Speed: Verizon (West)'
+              },
+
+              yAxis: {
+              title: {
+              text: 'Download Speed (mbps)'
+              }
+              },
+
+              xAxis: {
+              accessibility: {
+              rangeDescription: 'Years'
+              }
+              },
+
+              legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+              },
+
+              plotOptions: {
+              series: {
+              label: {
+                connectorAllowed: false
+              },
+              pointStart: 2013
+              }
+              },
+
+              series: [{
+              name: 'Verizon',
+              data: [7, 10, 11, 11, 14, 16, 17, 21]
+              }],
+
+              responsive: {
+              rules: [{
+              condition: {
+                maxWidth: 500
+              },
+              chartOptions: {
+                legend: {
+                  layout: 'horizontal',
+                  align: 'center',
+                  verticalAlign: 'bottom'
+                }}}]}
+              });
+
+              // East Download Graph
+              Highcharts.chart('eDown', {
+
+                title: {
+                text: 'Average Download Speed: Verizon (East)'
+                },
+
+                yAxis: {
+                title: {
+                text: 'Download Speed (mbps)'
+                }
+                },
+
+                xAxis: {
+                accessibility: {
+                rangeDescription: 'Years'
+                }
+                },
+
+                legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+                },
+
+                plotOptions: {
+                series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2013
+                }
+                },
+
+                series: [{
+                name: 'Verizon',
+                data: [5, 7, 8, 8, 8, 9, 9, 12]
+                 }],
+
+                responsive: {
+                rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }}}]}
+                });
+
+
+              // West Upload graph
+
+              Highcharts.chart('wUp', {
+
+               title: {
+               text: 'Average Upload Speed: Verizon (West)'
+               },
+
+               yAxis: {
+               title: {
+                 text: 'Upload Speed (mbps)'
+               }
+               },
+
+               xAxis: {
+               accessibility: {
+                 rangeDescription: 'Years'
+               }
+               },
+
+               legend: {
+               layout: 'vertical',
+               align: 'right',
+               verticalAlign: 'middle'
+               },
+
+               plotOptions: {
+               series: {
+                 label: {
+                   connectorAllowed: false
+                 },
+                 pointStart: 2013
+               }
+               },
+
+               series: [{
+           
+               name: 'Verizon',
+               data: [3, 4, 4, 4, 5, 6, 7, 6]
+               }],
+
+               responsive: {
+               rules: [{
+                 condition: {
+                   maxWidth: 500
+                 },
+                 chartOptions: {
+                   legend: {
+                     layout: 'horizontal',
+                     align: 'center',
+                     verticalAlign: 'bottom'
+                   }
+                 }
+               }]
+               }
+
+             });
+
+             // East Upload graph
+
+             Highcharts.chart('eUp', {
+
+              title: {
+              text: 'Average Upload Speed: Verizon (East)'
               },
 
               yAxis: {
@@ -198,7 +317,7 @@
 
               series: [{
               name: 'Verizon',
-              data: [3.480, 3.961, 4.284, 4.262, 4.994, 5.940, 6.907, 6.057]
+              data: [5, 7, 8, 8, 8, 9, 9, 12]
               }],
 
               responsive: {
@@ -218,10 +337,13 @@
 
             });
 
-         </script>
+
+          </script>
+
 
         </main>
       </div>
+
     </div>
   </body>
 </html>

@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <title>CalSPEED Mobile Data</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -16,7 +17,10 @@
     <!-- <script src="js/exporting.js"></script> -->
     <script src="js/export-data.js"></script>
     <script src="js/accessibility.js"></script>
-    <script src="js/high-contrast-light.js"></script>
+    <!-- <script src="js/high-contrast-light.js"></script> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -91,137 +95,256 @@
 
           </div>
 
-    	 <div class="dropdown">
+          <div class="dropdown">
+            <button class="dropbtn">Carriers</button>
+              <div class="dropdown-content">
+                   <a href="at.html">AT&T</a>
+                 <a href="sprint.html">Sprint</a>
+                 <a href="tmobile.html">T-Mobile</a>
+                   <a href="verizon.html">Verizon</a>
+               <a href="all.html">All Carriers</a>
+              </div>
+         </div>
 
-     		 <button class="dropbtn">Carriers</button>
-     			 <div class="dropdown-content">
-      		  		<a href="at.html">AT&T</a>
-      		 		<a href="sprint.html">Sprint</a>
-      				<a href="tmobile.html">T-Mobile</a>
-      		  		<a href="verizon.html">Verizon</a>
-    				<a href="all.html">All Carriers</a>
-     			 </div>
-    	</div>
 
-      <div id="atntDown" style="width:80%; height:45 0px;"></div>
-      <br><br>
-      <div id="atntUp" style="width:80%; height:450px;"></div>
+          <div id="wDown" style="width:80%; height:45 0px;"></div>
+          <br><br>
+          <div id="eDown" style="width:80%; height:45 0px;"></div>
+          <br><br>
+          <div id="wUp" style="width:80%; height:450px;"></div>
+          <br><br>
+          <div id="eUp" style="width:80%; height:45 0px;"></div>
 
-      <script>
-        //Download Graph
-        Highcharts.chart('atntDown', {
 
-          title: {
-          text: 'Average Download Speed: AT&T'
-          },
+          <script>
+            // West Download Graph
+            Highcharts.chart('wDown', {
 
-          yAxis: {
-          title: {
-          text: 'Download Speed (mbps)'
-          }
-          },
+              title: {
+              text: 'Average Download Speed: AT&T (West)'
+              },
 
-          xAxis: {
-          accessibility: {
-          rangeDescription: 'Years'
-          }
-          },
+              yAxis: {
+              title: {
+              text: 'Download Speed (mbps)'
+              }
+              },
 
-          legend: {
-          layout: 'vertical',
-          align: 'right',
-          verticalAlign: 'middle'
-          },
+              xAxis: {
+              accessibility: {
+              rangeDescription: 'Years'
+              }
+              },
 
-          plotOptions: {
-          series: {
-          label: {
-            connectorAllowed: false
-          },
-          pointStart: 2013
-          }
-          },
+              legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+              },
 
-          series: [{
-          name: 'AT&T',
-          data: [9.232, 9.322, 11.631, 13.632, 15.143, 13.820, 16.956, 24.579]
+              plotOptions: {
+              series: {
+              label: {
+                connectorAllowed: false
+              },
+              pointStart: 2013
+              }
+              },
 
-          }],
+              series: [{
+              name: 'AT&T',
+              data: [9, 9, 12, 14, 15, 14, 17, 25]
+              }],
 
-          responsive: {
-          rules: [{
-          condition: {
-            maxWidth: 500
-          },
-          chartOptions: {
-            legend: {
-              layout: 'horizontal',
-              align: 'center',
-              verticalAlign: 'bottom'
-            }}}]}
-          });
+              responsive: {
+              rules: [{
+              condition: {
+                maxWidth: 500
+              },
+              chartOptions: {
+                legend: {
+                  layout: 'horizontal',
+                  align: 'center',
+                  verticalAlign: 'bottom'
+                }}}]}
+              });
 
-          // Upload graph
+              // East Download Graph
+              Highcharts.chart('eDown', {
 
-          Highcharts.chart('atntUp', {
+                title: {
+                text: 'Average Download Speed: AT&T (East)'
+                },
 
-           title: {
-           text: 'Average Upload Speed: AT&T'
-           },
+                yAxis: {
+                title: {
+                text: 'Download Speed (mbps)'
+                }
+                },
 
-           yAxis: {
-           title: {
-             text: 'Upload Speed (mbps)'
-           }
-           },
+                xAxis: {
+                accessibility: {
+                rangeDescription: 'Years'
+                }
+                },
 
-           xAxis: {
-           accessibility: {
-             rangeDescription: 'Years'
-           }
-           },
+                legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+                },
 
-           legend: {
-           layout: 'vertical',
-           align: 'right',
-           verticalAlign: 'middle'
-           },
+                plotOptions: {
+                series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2013
+                }
+                },
 
-           plotOptions: {
-           series: {
-             label: {
-               connectorAllowed: false
-             },
-             pointStart: 2013
-           }
-           },
+                series: [{
+                name: 'AT&T',
+                data: [7, 8, 9, 10, 8, 8, 9, 12]
+                }],
 
-           series: [{
-           name: 'AT&T',
-           data: [4.369, 4.192, 5.059, 5.797, 5.534, 4.758, 5.723, 7.047]
-           }],
+                responsive: {
+                rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }}}]}
+                });
 
-           responsive: {
-           rules: [{
-             condition: {
-               maxWidth: 500
-             },
-             chartOptions: {
-               legend: {
-                 layout: 'horizontal',
-                 align: 'center',
-                 verticalAlign: 'bottom'
+
+              // West Upload graph
+
+              Highcharts.chart('wUp', {
+
+               title: {
+               text: 'Average Upload Speed: AT&T (West)'
+               },
+
+               yAxis: {
+               title: {
+                 text: 'Upload Speed (mbps)'
                }
-             }
-           }]
-           }
+               },
 
-         });
+               xAxis: {
+               accessibility: {
+                 rangeDescription: 'Years'
+               }
+               },
 
-      </script>
+               legend: {
+               layout: 'vertical',
+               align: 'right',
+               verticalAlign: 'middle'
+               },
+
+               plotOptions: {
+               series: {
+                 label: {
+                   connectorAllowed: false
+                 },
+                 pointStart: 2013
+               }
+               },
+
+               series: [{
+               name: 'AT&T',
+               data: [4, 4, 5, 6, 6, 5, 6, 7]
+
+               }],
+
+               responsive: {
+               rules: [{
+                 condition: {
+                   maxWidth: 500
+                 },
+                 chartOptions: {
+                   legend: {
+                     layout: 'horizontal',
+                     align: 'center',
+                     verticalAlign: 'bottom'
+                   }
+                 }
+               }]
+               }
+
+             });
+
+             // East Upload graph
+
+             Highcharts.chart('eUp', {
+
+              title: {
+              text: 'Average Upload Speed: AT&T (East)'
+              },
+
+              yAxis: {
+              title: {
+                text: 'Upload Speed (mbps)'
+              }
+              },
+
+              xAxis: {
+              accessibility: {
+                rangeDescription: 'Years'
+              }
+              },
+
+              legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+              },
+
+              plotOptions: {
+              series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2013
+              }
+              },
+
+              series: [{
+              name: 'AT&T',
+              data: [7, 8, 9, 10, 8, 8, 9, 12]
+
+              }],
+
+              responsive: {
+              rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }]
+              }
+
+            });
+
+
+          </script>
+
 
         </main>
       </div>
+
     </div>
   </body>
 </html>
