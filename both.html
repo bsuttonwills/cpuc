@@ -95,18 +95,23 @@
 					<a href="both.html">Both</a>
      			 </div>
     	</div>
-        <div id="Desktop" style="width:80%; height:400px;"></div>
+        <div id="WDownload" style="width:80%; height:400px;"></div>
+        <div id="EDownload" style="width:80%; height:400px;"></div>
+        <div id="WUpload" style="width:80%; height:400px;"></div>
+        <div id="EUpload" style="width:80%; height:400px;"></div>
+
 
         <script>
-          Highcharts.chart('Desktop', {
+        // West Download Graph
+          Highcharts.chart('WDownload', {
 
             title: {
-              text: 'Internet Speeds by Year by Operating System'
+              text: 'Download Speed by Year for Operating Systems (West)'
             },
 
             yAxis: {
               title: {
-                text: 'Upload / Download Speed (mbps)'
+                text: 'Download Speed (mbps)'
               }
             },
 
@@ -127,18 +132,209 @@
                 label: {
                   connectorAllowed: false
                 },
-                pointStart: 2013
+                pointStart: 2014
               }
             },
 
             series: [{
               name: 'PC',
-              data: [15.569, 9.214, 6.786, 7.723, 5.136, 10.477, 10.901]
+              data: [15, 14, 12, 23, 18, 25, 30]
 
 
             }, {
               name: 'Mac',
-              data: [8.296, 5.072, 4.277, 5.027, 3.995, 6.092, 7.598]
+              data: [38, 15, 24, 21, 33, 21, 58]
+
+
+            }],
+
+            responsive: {
+              rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }]
+            }
+
+          });
+
+
+          //East Download Graph
+          Highcharts.chart('EDownload', {
+
+            title: {
+              text: 'Download Speed by Year for Operating Systems (East)'
+            },
+
+            yAxis: {
+              title: {
+                text: 'Download Speed (mbps)'
+              }
+            },
+
+            xAxis: {
+              accessibility: {
+                rangeDescription: 'Years'
+              }
+            },
+
+            legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+              series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2014
+              }
+            },
+
+            series: [{
+              name: 'PC',
+              data: [7, 8, 9, 11, 10, 10, 12]
+
+
+            }, {
+              name: 'Mac',
+              data: [23, 10, 13, 11, 15, 13, 39]
+
+
+            }],
+
+            responsive: {
+              rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }]
+            }
+
+          });
+
+          //West Uplaod Graph
+          Highcharts.chart('WUpload', {
+
+            title: {
+              text: 'Upload Speed by Year for Operating Systems (West)'
+            },
+
+            yAxis: {
+              title: {
+                text: 'Upload Speed (mbps)'
+              }
+            },
+
+            xAxis: {
+              accessibility: {
+                rangeDescription: 'Years'
+              }
+            },
+
+            legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+              series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2014
+              }
+            },
+
+            series: [{
+              name: 'PC',
+              data: [12, 10, 5, 8, 5, 12, 12]
+
+
+            }, {
+              name: 'Mac',
+              data: [21, 8, 12, 5, 6, 5, 7]
+
+
+            }],
+
+            responsive: {
+              rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }]
+            }
+
+          });
+
+
+          //East Uplaod Graph
+          Highcharts.chart('EUpload', {
+
+            title: {
+              text: 'Upload Speed by Year for Operating Systems (East)'
+            },
+
+            yAxis: {
+              title: {
+                text: 'Upload Speed (mbps)'
+              }
+            },
+
+            xAxis: {
+              accessibility: {
+                rangeDescription: 'Years'
+              }
+            },
+
+            legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+              series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2014
+              }
+            },
+
+            series: [{
+              name: 'PC',
+              data: [7, 5, 4, 5, 4, 7, 8]
+
+
+            }, {
+              name: 'Mac',
+              data: [10, 4, 6, 5, 5, 4, 6]
 
 
             }],
